@@ -55,7 +55,7 @@ ROOT_URLCONF = 'djangocookieauth.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR.joinpath('frontend')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,3 +128,7 @@ SESSION_COOKIE_SAMESITE = 'Strict'
 #For Prod -- Set These Lines as 'true'
 CSRF_COOKIE_HTTPONLY = False
 SESSION_COOKIE_HTTPONLY = True
+
+STATICFILE_DIRS = (
+    BASE_DIR.joinpath('frontend', 'dist')
+)
